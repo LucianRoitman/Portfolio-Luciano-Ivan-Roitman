@@ -92,23 +92,23 @@ a {
 .hero-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 290px;
+  grid-template-areas: "info photo";
   align-items: center;
   gap: 64px;
 }
 
-.profile-photo {
-  width: 290px;
-  aspect-ratio: 1;
-  justify-self: end;
-  border-radius: 12px;
+.profile-info {
+  grid-area: info;
 }
 
-.profile-info h1 {
-  margin: 0 0 12px;
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+.profile-photo {
+  display: block;
+  grid-area: photo;
+  width: 290px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 12px;
 }
 
 .profile-role {
@@ -166,7 +166,11 @@ a {
 }
 
 .project-image {
+  display: block;
+  width: 100%;
   aspect-ratio: 352 / 320;
+  object-fit: cover;
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 
